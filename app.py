@@ -14,11 +14,11 @@ app.title='dc_houses'
 
 ########## Define the data
 df = pd.read_csv('resources/DC_Properties.csv', index_col='Unnamed: 0')
-df=df[df['PRICE'].between(300000, 500000)] # artificially reduce the number of data points for efficiency
+df=df[df['BEDRM'].between(0, 10)] # artificially reduce the number of data points for efficiency
 
 ########## Define the figure
 
-fig = go.Figure(go.Densitymapbox(lat=df['LATITUDE'], lon=df['LONGITUDE'], z=df['PRICE'], radius=10))
+fig = go.Figure(go.Densitymapbox(lat=df['LATITUDE'], lon=df['LONGITUDE'], z=df['BEDRM'], radius=10))
 fig.update_layout(mapbox_style="stamen-terrain",
                   mapbox_center_lon=-77.07,
                   mapbox_center_lat=38.92,
