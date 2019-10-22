@@ -19,7 +19,7 @@ df=df[df['BEDRM'].between(0, 10)] # artificially reduce the number of data point
 ########## Define the figure
 
 fig = go.Figure(go.Densitymapbox(lat=df['LATITUDE'], lon=df['LONGITUDE'], z=df['BEDRM'], radius=10))
-fig.update_layout(mapbox_style="stamen-terrain",
+fig.update_layout(mapbox_style="open-street-map",
                   mapbox_center_lon=-77.07,
                   mapbox_center_lat=38.92,
                   mapbox_zoom=11,
