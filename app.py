@@ -10,7 +10,7 @@ import pickle
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
-app.title='dc_houses'
+app.title='dc_houses_by_bedrooms'
 
 ########## Define the data
 df = pd.read_csv('resources/DC_Properties.csv', index_col='Unnamed: 0')
@@ -29,7 +29,7 @@ fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 ########### Set up the layout
 
 app.layout = html.Div(children=[
-    html.H1('DC Houses'),
+    html.H1('DC Houses by Number of Bedrooms'),
     html.Div([
         dcc.Graph(id='figure-1', figure=fig),
         html.A('Code on Github', href='https://github.com/austinlasseter/dash-density-heatmap'),
